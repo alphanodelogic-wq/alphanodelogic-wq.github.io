@@ -3,7 +3,7 @@
 <!--
 
 Page    : privacy-policy / Alpha Node Logic
-Version : 2.0
+Version : 2.1 — updated to cover all Alpha Node Logic apps individually
 Author  : Alpha Node Logic (Based on Colorlib MobApp)
 
  -->
@@ -71,6 +71,36 @@ Author  : Alpha Node Logic (Based on Colorlib MobApp)
             color: #8892B0;
             font-size: 16px;
         }
+        .app-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0 1.5rem;
+            font-size: 14px;
+        }
+        .app-table th, .app-table td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(136,146,176,0.25);
+            vertical-align: top;
+        }
+        .app-table th {
+            color: #8892B0;
+            font-weight: 600;
+        }
+        .app-table td strong {
+            display: block;
+            margin-bottom: 2px;
+        }
+        .badge-soon {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            color: #4A7CF7;
+            border: 1px solid #4A7CF7;
+            border-radius: 4px;
+            padding: 1px 6px;
+            margin-left: 6px;
+        }
     </style>
 </head>
 
@@ -103,7 +133,7 @@ Author  : Alpha Node Logic (Based on Colorlib MobApp)
     <div class="bg-gradient page-header" id="home">
         <div class="container">
             <h1>Privacy Policy</h1>
-            <small>Last Updated: July 8, 2026</small>
+            <small>Last Updated: August 11, 2026</small>
         </div>
     </div>
 
@@ -114,96 +144,75 @@ Author  : Alpha Node Logic (Based on Colorlib MobApp)
                 <div class="col-lg-10 offset-lg-1">
 
                     <h2>Introduction</h2>
-                    <p>Alpha Node Logic ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile applications, software tools, and any other products or services we offer (collectively, the "Services").</p>
-                    <p>Please read this Privacy Policy carefully. By accessing or using our Services, you acknowledge that you have read, understood, and agree to be bound by all the terms outlined herein. If you do not agree with our policies and practices, please do not use our Services.</p>
+                    <p>Alpha Node Logic ("we," "our," or "us") builds and publishes a family of mobile applications. This Privacy Policy applies to all apps we publish, including those listed in the table below, plus any future apps we release under the Alpha Node Logic developer account. By using any of our apps, you acknowledge that you have read, understood, and agree to the practices described here. If a specific app ever needs a materially different policy, we will publish it separately and link to it from here.</p>
 
-                    <h2>Information We Collect</h2>
-                    <p>We may collect the following types of information when you use our Services:</p>
+                    <h2>Apps Covered by This Policy</h2>
+                    <table class="app-table">
+                        <tr><th>App</th><th>What it does</th><th>Account required?</th><th>Data it collects</th></tr>
+                        <tr>
+                            <td><strong>Money Flow</strong></td>
+                            <td>Personal &amp; business finance manager — accounts, income/expense transactions, salary &amp; attendance tracking.</td>
+                            <td>Optional (Google sign-in, phone OTP, or guest)</td>
+                            <td>Account identity (email or phone number) if you sign in; the financial data you manually enter (accounts, transactions, expenses, salary records); a hashed app-security password (never stored or sent in plain text). See "Money Flow — Details" below.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Business Calculator</strong></td>
+                            <td>Configurable calculator app driven by pre-made JSON/Excel-style templates.</td>
+                            <td>No</td>
+                            <td>No personal data is collected. Any templates or inputs you create are stored locally on your device.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Alpha Vision</strong></td>
+                            <td>AMOLED wallpaper app.</td>
+                            <td>No</td>
+                            <td>No personal data or account is collected. The app may access device storage only to save or set a wallpaper you choose.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Poultry Ecosystem</strong><span class="badge-soon">Coming soon</span></td>
+                            <td>Poultry farm management suite (DC/feed calculator and related tools), currently in development.</td>
+                            <td>TBD</td>
+                            <td>This section will be filled in with specifics before the app launches. It will follow the same principles as our other apps: no ad tracking, no selling of data, and data control in your hands.</td>
+                        </tr>
+                    </table>
 
-                    <h3>Personal Information You Provide</h3>
-                    <p>We may collect personally identifiable information that you voluntarily provide to us when you:</p>
+                    <h2>Money Flow — Details</h2>
+                    <p>Money Flow is <strong>offline-first</strong>: your data lives primarily in a local database on your device, so the app works fully without internet. If you sign in with Google or your phone number, a private copy of your data is also mirrored to a cloud database (Firebase/Firestore) scoped strictly to your own account — nobody else can read it, enforced by server-side security rules keyed to your account. Using the app as a guest skips this entirely; nothing is uploaded.</p>
+                    <p>Money Flow also lets you set an app-security password to protect sensitive actions (deleting data, resetting the database). This password is stored only as a salted, iterated cryptographic hash — never in plain text, and never transmitted anywhere in readable form.</p>
+                    <p>Permissions Money Flow may request:</p>
                     <ul>
-                        <li>Register for an account or create a user profile within any of our applications</li>
-                        <li>Contact us for customer support or technical assistance</li>
-                        <li>Subscribe to our newsletters, marketing materials, or product updates</li>
-                        <li>Participate in surveys, feedback programs, or beta testing initiatives</li>
-                        <li>Submit feature requests, bug reports, or other communications</li>
+                        <li><strong>Biometric / device lock</strong> — optional app-lock feature; verification happens entirely on your device via the operating system, we never see or store biometric data.</li>
+                        <li><strong>Storage</strong> — to let you export/share a backup file or a printed receipt (PDF) that you explicitly choose to save or send.</li>
                     </ul>
-                    <p>This information may include, but is not limited to: your full name, email address, phone number, postal address, company name, job title, and billing information where applicable.</p>
+                    <p>You can edit or delete any record at any time inside the app, and you can close/delete your account from Settings, which removes your data from our cloud database.</p>
 
-                    <h3>Information Collected Automatically</h3>
-                    <p>When you access or use our Services, we may automatically collect certain information, including:</p>
-                    <ul>
-                        <li>Device information (model, operating system version, unique device identifiers)</li>
-                        <li>Usage data (features accessed, time spent, interaction patterns within our apps)</li>
-                        <li>Log data (IP address, browser type, referring/exit pages, date/time stamps)</li>
-                        <li>Crash reports and performance metrics to improve app stability</li>
-                        <li>Approximate geographic location based on IP address for analytics purposes</li>
-                    </ul>
+                    <h2>Information We Collect (General)</h2>
+                    <p>Beyond what's listed per app above, if you contact us directly — for support, feedback, or bug reports — we collect whatever you send us (e.g. your email address and the content of your message) solely to respond to you.</p>
 
                     <h2>How We Use Your Information</h2>
-                    <p>We use the collected information for the following purposes:</p>
                     <ul>
-                        <li>To provide, maintain, and improve our mobile applications and services</li>
-                        <li>To process transactions and send related confirmations and updates</li>
-                        <li>To respond to your comments, questions, and support requests</li>
-                        <li>To send you technical notices, security alerts, and support messages</li>
-                        <li>To monitor and analyze trends, usage patterns, and performance metrics</li>
-                        <li>To detect, prevent, and address technical issues, fraud, and unauthorized access</li>
-                        <li>To personalize your experience and deliver content relevant to your interests</li>
-                        <li>To comply with legal obligations and enforce our terms and conditions</li>
+                        <li>To provide and operate the specific app feature the data belongs to (e.g. syncing your Money Flow data across your own devices).</li>
+                        <li>To respond to support requests, bug reports, and feedback.</li>
+                        <li>To detect and fix technical issues.</li>
+                        <li>To comply with legal obligations where applicable.</li>
                     </ul>
 
                     <h2>Data Sharing and Disclosure</h2>
-                    <p>We do not sell, trade, or rent your personal information to third parties. We may share your information in the following circumstances:</p>
-                    <ul>
-                        <li><strong>Service Providers:</strong> We may share information with trusted third-party vendors who perform services on our behalf, such as cloud hosting, analytics, payment processing, and customer support.</li>
-                        <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, reorganization, or sale of assets, your information may be transferred as part of that transaction. You will be notified via email and/or a prominent notice on our Services of any change in ownership.</li>
-                        <li><strong>Legal Requirements:</strong> We may disclose information if required to do so by law or in response to valid requests by public authorities, such as a court or government agency.</li>
-                        <li><strong>Consent:</strong> We may share your information with your explicit consent or at your direction.</li>
-                    </ul>
+                    <p>We do not sell, rent, or trade your personal or app data to third parties. None of our apps currently run advertising or use third-party analytics/tracking SDKs. The only outside service any of our apps currently relies on is Firebase (by Google), used by Money Flow solely for sign-in and as the private cloud backup for your own account — governed additionally by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. We may disclose information if legally required to do so by a valid request from a public authority.</p>
 
                     <h2>Data Security</h2>
-                    <p>We implement industry-standard technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
-                    <ul>
-                        <li>Encryption of data in transit using TLS/SSL protocols</li>
-                        <li>Secure server infrastructure with access controls and monitoring</li>
-                        <li>Regular security audits and vulnerability assessments</li>
-                        <li>Strict internal data access policies and employee training</li>
-                    </ul>
-                    <p>However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to protect your personal data, we cannot guarantee its absolute security.</p>
+                    <p>We use industry-standard safeguards appropriate to each app — for Money Flow, this includes encrypted data in transit (TLS), server-side access rules that restrict your cloud data to your own account only, and salted/hashed storage of your security password. No method of transmission or storage is 100% secure, but we do not store more than each app genuinely needs to function.</p>
 
                     <h2>Data Retention</h2>
-                    <p>We retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by applicable law. When we no longer need your information, we will securely delete or anonymize it. Typical retention periods are as follows:</p>
-                    <ul>
-                        <li>Account information: Retained for the duration of your account plus 12 months after closure</li>
-                        <li>Usage analytics: Retained for 36 months in aggregated form</li>
-                        <li>Support communications: Retained for 24 months after the last interaction</li>
-                    </ul>
+                    <p>Data stored only on your device is removed when you uninstall the app. For Money Flow, cloud-backed data is retained for as long as your account exists and is deleted when you close/delete your account from within the app.</p>
 
                     <h2>Your Rights and Choices</h2>
-                    <p>Depending on your jurisdiction, you may have the following rights regarding your personal information:</p>
-                    <ul>
-                        <li><strong>Access:</strong> Request a copy of the personal information we hold about you.</li>
-                        <li><strong>Correction:</strong> Request that we correct any inaccurate or incomplete information we hold about you.</li>
-                        <li><strong>Deletion:</strong> Request that we delete your personal information, subject to certain legal exceptions.</li>
-                        <li><strong>Portability:</strong> Request a copy of your data in a structured, machine-readable format.</li>
-                        <li><strong>Objection:</strong> Object to the processing of your personal information for certain purposes, including direct marketing.</li>
-                        <li><strong>Withdrawal of Consent:</strong> Withdraw your consent at any time where we relied on your consent to process your information.</li>
-                    </ul>
-                    <p>To exercise any of these rights, please contact us using the information provided in the "Contact Us" section below. We will respond to your request within 30 days.</p>
+                    <p>Depending on your jurisdiction, you may have the right to access, correct, or delete your personal information, or request a copy of it. For Money Flow, most of this is available directly in-app (edit/delete any record, or delete your account from Settings). For anything else, contact us using the details below and we'll respond within a reasonable timeframe.</p>
 
                     <h2>Children's Privacy</h2>
-                    <p>Our Services are not directed to individuals under the age of 13 (or the applicable age of digital consent in your jurisdiction). We do not knowingly collect personal information from children. If we become aware that a child has provided us with personal information without verifiable parental consent, we will take steps to delete such information promptly. If you believe that a child has provided us with personal information, please contact us immediately.</p>
-
-                    <h2>Third-Party Services</h2>
-                    <p>Our mobile applications and services may contain links to third-party websites, SDKs, or services that are not owned or controlled by us. This includes, but is not limited to, analytics providers, advertising networks, and payment processors. We are not responsible for the privacy practices of these third parties. We encourage you to review the privacy policies of any third-party services you interact with through our applications.</p>
+                    <p>Our apps are intended for general audiences and are not directed at children under 13. We do not knowingly collect personal information from children.</p>
 
                     <h2>Changes to This Privacy Policy</h2>
-                    <p>We reserve the right to update or modify this Privacy Policy at any time. When we make material changes, we will revise the "Last Updated" date at the top of this page and may provide additional notice through our Services or via email. We encourage you to review this Privacy Policy periodically to stay informed about how we are protecting your information. Your continued use of our Services after any changes constitutes your acceptance of the updated Privacy Policy.</p>
-
-                    <h2>International Data Transfers</h2>
-                    <p>Your information may be transferred to and processed in countries other than your country of residence. These countries may have data protection laws that differ from those in your jurisdiction. When we transfer your data internationally, we take appropriate safeguards to ensure that your personal information remains protected in accordance with this Privacy Policy, including the use of Standard Contractual Clauses where required.</p>
+                    <p>We may update this Privacy Policy as our apps evolve or as we add new ones. Material changes will be reflected by updating the "Last Updated" date at the top of this page. Continued use of any of our apps after a change constitutes acceptance of the updated policy.</p>
 
                     <h2>Contact Us</h2>
                     <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
@@ -253,5 +262,4 @@ Author  : Alpha Node Logic (Based on Colorlib MobApp)
     <script src="js/script.js"></script>
 
 </body>
-
 </html>
