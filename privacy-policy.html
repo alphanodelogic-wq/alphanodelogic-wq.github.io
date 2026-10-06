@@ -133,7 +133,7 @@ Author  : Alpha Node Logic (Based on Colorlib MobApp)
     <div class="bg-gradient page-header" id="home">
         <div class="container">
             <h1>Privacy Policy</h1>
-            <small>Last Updated: August 11, 2026</small>
+            <small>Last Updated: October 6, 2026</small>
         </div>
     </div>
 
@@ -168,10 +168,10 @@ Author  : Alpha Node Logic (Based on Colorlib MobApp)
                             <td>No personal data or account is collected. The app may access device storage only to save or set a wallpaper you choose.</td>
                         </tr>
                         <tr>
-                            <td><strong>Poultry Ecosystem</strong><span class="badge-soon">Coming soon</span></td>
-                            <td>Poultry farm management suite (DC/feed calculator and related tools), currently in development.</td>
-                            <td>TBD</td>
-                            <td>This section will be filled in with specifics before the app launches. It will follow the same principles as our other apps: no ad tracking, no selling of data, and data control in your hands.</td>
+                            <td><strong>Poultry Book</strong></td>
+                            <td>Business book for poultry traders — sale bills, DC / purchases, payments, expenses, party ledgers and staff entries, on Android with a Windows PC companion.</td>
+                            <td>Yes for the real business book (Google sign-in; staff use their own Google account plus a one-time QR from the owner). The demo and the on-phone "test khata" work without an account.</td>
+                            <td>Google account identity (name, email) of the owner and staff; the business records they enter, including the names, phone numbers and balances of the business's own customers and suppliers. See "Poultry Book — Details" below.</td>
                         </tr>
                     </table>
 
@@ -185,28 +185,41 @@ Author  : Alpha Node Logic (Based on Colorlib MobApp)
                     </ul>
                     <p>You can edit or delete any record at any time inside the app, and you can close/delete your account from Settings, which removes your data from our cloud database.</p>
 
+                    <h2>Poultry Book — Details</h2>
+                    <p>Poultry Book is <strong>cloud-first</strong>: a business's records are stored in a cloud database (Firebase / Firestore, India region) under that business, so the owner's phone, the staff phones and the owner's PC show the same book. Server-side security rules let only the owner's Google account and the staff the owner adds reach a business's data. The PC companion keeps a local copy and syncs it. The demo and the "test khata" (where you can try a backup or a Vyapar import) stay only on the phone and are never uploaded.</p>
+                    <p><strong>Staff.</strong> The owner adds staff (name, role, vehicle, optional phone number). A staff member signs in with their own Google account after scanning a one-time code from the owner; only a cryptographic hash of that code is stored. The owner can see the staff member's Google email, device type and the entries they made; a staff member sees only their own entries plus the business's party and item lists. Staff entries wait for the owner's approval before they change any balance, and the owner can log a staff member out or remove them at any time.</p>
+                    <p><strong>Data about other people.</strong> The book holds the names, phone numbers, addresses and balances of the business's customers and suppliers, entered by the business. We process this only to run that business's book and never use it for anything else.</p>
+                    <p>Permissions Poultry Book may request:</p>
+                    <ul>
+                        <li><strong>Camera</strong> — only to scan the staff login QR code; the image is processed on the device and no photo is saved or sent.</li>
+                        <li><strong>Internet / network state</strong> — to sync the book with the cloud.</li>
+                        <li><strong>Files you pick</strong> — a backup file (.pbk) or a Vyapar backup that you choose is read on the device; a restore or Vyapar import goes into the on-phone test khata only.</li>
+                    </ul>
+                    <p>Bills, statements and backups are created only when you tap Print / Share / Backup, and go through the app you choose (for example WhatsApp); Poultry Book never reads your chats. The Google sign-in library also declares a biometric permission; Poultry Book itself does not use biometrics. Poultry Book does not collect location today; if a later version adds location for deliveries, it will be off unless the owner turns it on, staff will be told on their phone, and this policy will be updated first.</p>
+                    <p><strong>AI on the PC companion (optional).</strong> If you set up an AI provider in the PC app with your own key (for example Anthropic, OpenAI, Google, DeepSeek or OpenRouter), your question and the business records needed to answer it are sent to that provider under its own privacy policy. Nothing is sent unless you use the AI features; a local model option sends nothing out.</p>
+
                     <h2>Information We Collect (General)</h2>
                     <p>Beyond what's listed per app above, if you contact us directly — for support, feedback, or bug reports — we collect whatever you send us (e.g. your email address and the content of your message) solely to respond to you.</p>
 
                     <h2>How We Use Your Information</h2>
                     <ul>
-                        <li>To provide and operate the specific app feature the data belongs to (e.g. syncing your Money Flow data across your own devices).</li>
+                        <li>To provide and operate the specific app feature the data belongs to (e.g. syncing your Money Flow data across your own devices, or keeping a Poultry Book business's phones and PC in step).</li>
                         <li>To respond to support requests, bug reports, and feedback.</li>
                         <li>To detect and fix technical issues.</li>
                         <li>To comply with legal obligations where applicable.</li>
                     </ul>
 
                     <h2>Data Sharing and Disclosure</h2>
-                    <p>We do not sell, rent, or trade your personal or app data to third parties. None of our apps currently run advertising or use third-party analytics/tracking SDKs. The only outside service any of our apps currently relies on is Firebase (by Google), used by Money Flow solely for sign-in and as the private cloud backup for your own account — governed additionally by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. We may disclose information if legally required to do so by a valid request from a public authority.</p>
+                    <p>We do not sell, rent, or trade your personal or app data to third parties. None of our apps currently run advertising or use third-party analytics/tracking SDKs. The only outside service our apps rely on is Firebase (by Google): Money Flow uses it solely for sign-in and as the private cloud backup for your own account, and Poultry Book uses it for sign-in and as the business's cloud database — governed additionally by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. The only other recipient is an AI provider you choose yourself in Poultry Book's PC app (see "Poultry Book — Details"). We may disclose information if legally required to do so by a valid request from a public authority.</p>
 
                     <h2>Data Security</h2>
-                    <p>We use industry-standard safeguards appropriate to each app — for Money Flow, this includes encrypted data in transit (TLS), server-side access rules that restrict your cloud data to your own account only, and salted/hashed storage of your security password. No method of transmission or storage is 100% secure, but we do not store more than each app genuinely needs to function.</p>
+                    <p>We use industry-standard safeguards appropriate to each app — for Money Flow, this includes encrypted data in transit (TLS), server-side access rules that restrict your cloud data to your own account only, and salted/hashed storage of your security password; for Poultry Book, encrypted transit (TLS), security rules that limit a business's data to its owner and approved staff, staff login codes stored only as hashes, and the PC companion's sign-in kept encrypted by Windows. No method of transmission or storage is 100% secure, but we do not store more than each app genuinely needs to function.</p>
 
                     <h2>Data Retention</h2>
-                    <p>Data stored only on your device is removed when you uninstall the app. For Money Flow, cloud-backed data is retained for as long as your account exists and is deleted when you close/delete your account from within the app.</p>
+                    <p>Data stored only on your device is removed when you uninstall the app. For Money Flow, cloud-backed data is retained for as long as your account exists and is deleted when you close/delete your account from within the app. For Poultry Book, a business's cloud records are kept for as long as the business exists; the owner can ask us to delete the whole business by writing from the owner's Google account email to the address below, and we delete it within 30 days. When a staff member is removed, the entries they made stay part of the business's books.</p>
 
                     <h2>Your Rights and Choices</h2>
-                    <p>Depending on your jurisdiction, you may have the right to access, correct, or delete your personal information, or request a copy of it. For Money Flow, most of this is available directly in-app (edit/delete any record, or delete your account from Settings). For anything else, contact us using the details below and we'll respond within a reasonable timeframe.</p>
+                    <p>Depending on your jurisdiction, you may have the right to access, correct, or delete your personal information, or request a copy of it. For Money Flow, most of this is available directly in-app (edit/delete any record, or delete your account from Settings). In Poultry Book, the owner can edit or delete any entry in the app; staff can ask their business owner, or contact us. For anything else, contact us using the details below and we'll respond within a reasonable timeframe.</p>
 
                     <h2>Children's Privacy</h2>
                     <p>Our apps are intended for general audiences and are not directed at children under 13. We do not knowingly collect personal information from children.</p>
@@ -217,7 +230,6 @@ Author  : Alpha Node Logic (Based on Colorlib MobApp)
                     <h2>Contact Us</h2>
                     <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
                     <ul>
-                        <li><strong>Business Address:</strong> [Official Registered Business Address]</li>
                         <li><strong>Email:</strong> <a href="mailto:alphanodelogic@gmail.com">alphanodelogic@gmail.com</a></li>
                     </ul>
                     <p>We will respond to your inquiry within a reasonable timeframe, typically within 5–10 business days.</p>
@@ -232,7 +244,6 @@ Author  : Alpha Node Logic (Based on Colorlib MobApp)
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <p class="mb-2"> <span class="ti-location-pin mr-2"></span> [Official Registered Business Address]</p>
                     <div class="d-block d-sm-inline-block">
                         <p class="mb-0">
                             <span class="ti-email mr-2"></span> <a class="mr-4" href="mailto:alphanodelogic@gmail.com">alphanodelogic@gmail.com</a>
